@@ -1,0 +1,44 @@
+<div id="mobile-menu-overlay"></div>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="../../../../assets/images/logo.png" alt="Marshmallow"></a>
+    <button [ngClass]="isCollapsed ? 'navbar-toggler show': 'navbar-toggler'" type="button" data-toggle="collapse"
+      data-target="#navbarTogglerDemo01" (click)="toggleClass()" aria-controls="navbarTogglerDemo01"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon mt-1">
+        <mat-icon>menu</mat-icon>
+      </span>
+    </button>
+    <div [ngClass]="isCollapsed ? 'collapse navbar-collapse show': 'collapse navbar-collapse'" id="navbarTogglerDemo01">
+      <div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
+        <img src="../../../../assets/images/logo-dark.svg" class="logo-mobile-menu" alt="logo">
+        <a (click)="toggleClass()" class="close-menu">
+          <mat-icon>close</mat-icon>
+        </a>
+      </div>
+      <ul class="navbar-nav ml-auto align-items-center">
+        <li class="nav-item active">
+          <a [routerLink]="['/home']" [ngClass]="isCollapsed ? 'nav-link show': 'nav-link'">Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [ngClass]="isCollapsed ? 'nav-link show': 'nav-link'">Services</a>
+        </li>
+        <li class="nav-item">
+          <a [ngClass]="isCollapsed ? 'nav-link show': 'nav-link'">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/ragister']"
+            [ngClass]="isCollapsed ? 'nav-link btn btn-success show': 'nav-link btn btn-success'"
+            href="#contact">Ragister</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="page-body-wrapper">
+
+  <router-outlet></router-outlet>
+
+</div>
